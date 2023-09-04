@@ -1,0 +1,9 @@
+{
+  "name": "Course2Chevals",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
