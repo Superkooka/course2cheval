@@ -17,7 +17,7 @@ export class Line extends Object2D {
         this.color = color;
     }
 
-    draw(context: CanvasRenderingContext2D): void {
+    redraw(context: CanvasRenderingContext2D): void {
         context.beginPath();
         context.moveTo(this.from.x, this.from.y);
         context.lineTo(this.to.x, this.to.y);

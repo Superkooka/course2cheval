@@ -1,5 +1,6 @@
 import { Object2D } from '../engine/object2D.js'
 import { vec2 } from '../engine/vec2.js'
+import { Line } from './line.js'
 
 export class Cross extends Object2D {
     from: vec2
@@ -17,16 +18,11 @@ export class Cross extends Object2D {
         this.color = color;
     }
 
-    draw(context: CanvasRenderingContext2D): void {
-        context.beginPath();
+    redraw(context: CanvasRenderingContext2D): void {
+        const lineA = new Line(this.from, new vec2(this.from.x + this.len, this.from.y + this.len), this.width, this.color)
+        const lineB = new Line(new vec2(this.from.x, this.from.y + this.len), new vec2(this.from.x + this.len, this.from.y), this.width, this.color)
 
-        context.moveTo(this.from.x, this.from.y);
-        context.lineTo(this.from.x + this.len, this.from.y + this.len);
-        context.moveTo(this.from.x, this.from.y + this.len);
-        context.lineTo(this.from.x + this.len, this.from.y);
-
-        context.lineWidth = this.width;
-        context.strokeStyle = this.color;
-        context.stroke();
+        lineA.redraw(context)
+        lineB.redraw(context)
     }
 }
