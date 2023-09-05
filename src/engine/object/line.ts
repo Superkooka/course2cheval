@@ -1,5 +1,5 @@
-import { Object2D } from '../engine/object2D.js'
-import { vec2 } from '../engine/vec2.js'
+import { Object2D } from './object2D.js'
+import { vec2 } from '../vec2.js'
 
 export class Line extends Object2D {
     from: vec2
